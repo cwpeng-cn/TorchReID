@@ -37,4 +37,14 @@
     </task>
     <servers />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="683" y="425" key="Github.ShareDialog" timestamp="1590998434920">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="683" y="425" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590998434920" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1590998366786">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590998366786" />
+  </component>
 </project>
