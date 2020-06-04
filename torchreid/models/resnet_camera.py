@@ -6,25 +6,24 @@ import torch.utils.model_zoo as model_zoo
 from torch import nn
 
 __all__ = [
-    'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152',
-    'resnext50_32x4d', 'resnext101_32x8d', 'resnet50_fc512'
+    'resnet50_camera', 'resnet50_fc512_camera'
 ]
 
 model_urls = {
     'resnet18':
-    'https://download.pytorch.org/models/resnet18-5c106cde.pth',
+        'https://download.pytorch.org/models/resnet18-5c106cde.pth',
     'resnet34':
-    'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
+        'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
     'resnet50':
-    'https://download.pytorch.org/models/resnet50-19c8e357.pth',
+        'https://download.pytorch.org/models/resnet50-19c8e357.pth',
     'resnet101':
-    'https://download.pytorch.org/models/resnet101-5d3b4d8f.pth',
+        'https://download.pytorch.org/models/resnet101-5d3b4d8f.pth',
     'resnet152':
-    'https://download.pytorch.org/models/resnet152-b121ed2d.pth',
+        'https://download.pytorch.org/models/resnet152-b121ed2d.pth',
     'resnext50_32x4d':
-    'https://download.pytorch.org/models/resnext50_32x4d-7cdf4587.pth',
+        'https://download.pytorch.org/models/resnext50_32x4d-7cdf4587.pth',
     'resnext101_32x8d':
-    'https://download.pytorch.org/models/resnext101_32x8d-8ba56ff5.pth',
+        'https://download.pytorch.org/models/resnext101_32x8d-8ba56ff5.pth',
 }
 
 
@@ -53,15 +52,15 @@ class BasicBlock(nn.Module):
     expansion = 1
 
     def __init__(
-        self,
-        inplanes,
-        planes,
-        stride=1,
-        downsample=None,
-        groups=1,
-        base_width=64,
-        dilation=1,
-        norm_layer=None
+            self,
+            inplanes,
+            planes,
+            stride=1,
+            downsample=None,
+            groups=1,
+            base_width=64,
+            dilation=1,
+            norm_layer=None
     ):
         super(BasicBlock, self).__init__()
         if norm_layer is None:
@@ -106,20 +105,20 @@ class Bottleneck(nn.Module):
     expansion = 4
 
     def __init__(
-        self,
-        inplanes,
-        planes,
-        stride=1,
-        downsample=None,
-        groups=1,
-        base_width=64,
-        dilation=1,
-        norm_layer=None
+            self,
+            inplanes,
+            planes,
+            stride=1,
+            downsample=None,
+            groups=1,
+            base_width=64,
+            dilation=1,
+            norm_layer=None
     ):
         super(Bottleneck, self).__init__()
         if norm_layer is None:
             norm_layer = nn.BatchNorm2d
-        width = int(planes * (base_width/64.)) * groups
+        width = int(planes * (base_width / 64.)) * groups
         # Both self.conv2 and self.downsample layers downsample the input when stride != 1
         self.conv1 = conv1x1(inplanes, width)
         self.bn1 = norm_layer(width)
@@ -156,7 +155,7 @@ class Bottleneck(nn.Module):
 
 class ResNet(nn.Module):
     """Residual network.
-    
+
     Reference:
         - He et al. Deep Residual Learning for Image Recognition. CVPR 2016.
         - Xie et al. Aggregated Residual Transformations for Deep Neural Networks. CVPR 2017.
@@ -173,20 +172,20 @@ class ResNet(nn.Module):
     """
 
     def __init__(
-        self,
-        num_classes,
-        loss,
-        block,
-        layers,
-        zero_init_residual=False,
-        groups=1,
-        width_per_group=64,
-        replace_stride_with_dilation=None,
-        norm_layer=None,
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        **kwargs
+            self,
+            num_classes,
+            loss,
+            block,
+            layers,
+            zero_init_residual=False,
+            groups=1,
+            width_per_group=64,
+            replace_stride_with_dilation=None,
+            norm_layer=None,
+            last_stride=2,
+            fc_dims=None,
+            dropout_p=None,
+            **kwargs
     ):
         super(ResNet, self).__init__()
         if norm_layer is None:
@@ -204,7 +203,7 @@ class ResNet(nn.Module):
             raise ValueError(
                 "replace_stride_with_dilation should be None "
                 "or a 3-element tuple, got {}".
-                format(replace_stride_with_dilation)
+                    format(replace_stride_with_dilation)
             )
         self.groups = groups
         self.base_width = width_per_group
@@ -373,7 +372,7 @@ class ResNet(nn.Module):
 
 def init_pretrained_weights(model, model_url):
     """Initializes model with pretrained weights.
-    
+
     Layers that don't match with pretrained layers in name or size are kept unchanged.
     """
     pretrain_dict = model_zoo.load_url(model_url)
@@ -390,39 +389,7 @@ def init_pretrained_weights(model, model_url):
 """ResNet"""
 
 
-def resnet18(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
-        num_classes=num_classes,
-        loss=loss,
-        block=BasicBlock,
-        layers=[2, 2, 2, 2],
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        **kwargs
-    )
-    if pretrained:
-        init_pretrained_weights(model, model_urls['resnet18'])
-    return model
-
-
-def resnet34(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
-        num_classes=num_classes,
-        loss=loss,
-        block=BasicBlock,
-        layers=[3, 4, 6, 3],
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        **kwargs
-    )
-    if pretrained:
-        init_pretrained_weights(model, model_urls['resnet34'])
-    return model
-
-
-def resnet50(num_classes, loss='softmax', pretrained=True, **kwargs):
+def resnet50_camera(num_classes, loss='softmax', pretrained=True, **kwargs):
     model = ResNet(
         num_classes=num_classes,
         loss=loss,
@@ -438,83 +405,12 @@ def resnet50(num_classes, loss='softmax', pretrained=True, **kwargs):
     return model
 
 
-def resnet101(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
-        num_classes=num_classes,
-        loss=loss,
-        block=Bottleneck,
-        layers=[3, 4, 23, 3],
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        **kwargs
-    )
-    if pretrained:
-        init_pretrained_weights(model, model_urls['resnet101'])
-    return model
-
-
-def resnet152(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
-        num_classes=num_classes,
-        loss=loss,
-        block=Bottleneck,
-        layers=[3, 8, 36, 3],
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        **kwargs
-    )
-    if pretrained:
-        init_pretrained_weights(model, model_urls['resnet152'])
-    return model
-
-
-"""ResNeXt"""
-
-
-def resnext50_32x4d(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
-        num_classes=num_classes,
-        loss=loss,
-        block=Bottleneck,
-        layers=[3, 4, 6, 3],
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        groups=32,
-        width_per_group=4,
-        **kwargs
-    )
-    if pretrained:
-        init_pretrained_weights(model, model_urls['resnext50_32x4d'])
-    return model
-
-
-def resnext101_32x8d(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
-        num_classes=num_classes,
-        loss=loss,
-        block=Bottleneck,
-        layers=[3, 4, 23, 3],
-        last_stride=2,
-        fc_dims=None,
-        dropout_p=None,
-        groups=32,
-        width_per_group=8,
-        **kwargs
-    )
-    if pretrained:
-        init_pretrained_weights(model, model_urls['resnext101_32x8d'])
-    return model
-
-
 """
 ResNet + FC
 """
 
 
-def resnet50_fc512(num_classes, loss='softmax', pretrained=True, **kwargs):
+def resnet50_fc512_camera(num_classes, loss='softmax', pretrained=True, **kwargs):
     model = ResNet(
         num_classes=num_classes,
         loss=loss,

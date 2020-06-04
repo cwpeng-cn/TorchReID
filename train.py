@@ -12,6 +12,8 @@ datamanager = torchreid.data.ImageDataManager(
     transforms=['random_flip', 'random_crop']
 )
 
+data_loader = datamanager.train_loader
+
 
 
 model = torchreid.models.build_model(
@@ -21,22 +23,24 @@ model = torchreid.models.build_model(
     pretrained=True
 )
 
-print(model)
 
-model = model.cuda()
-
-optimizer = torchreid.optim.build_optimizer(
-    model,
-    optim='adam',
-    lr=0.0003
-)
-
-scheduler = torchreid.optim.build_lr_scheduler(
-    optimizer,
-    lr_scheduler='single_step',
-    stepsize=20
-)
-
+#
+# print(model)
+#
+# model = model.cuda()
+#
+# optimizer = torchreid.optim.build_optimizer(
+#     model,
+#     optim='adam',
+#     lr=0.0003
+# )
+#
+# scheduler = torchreid.optim.build_lr_scheduler(
+#     optimizer,
+#     lr_scheduler='single_step',
+#     stepsize=20
+# )
+#
 engine = torchreid.engine.ImageSoftmaxEngine(
     datamanager,
     model,
@@ -44,11 +48,11 @@ engine = torchreid.engine.ImageSoftmaxEngine(
     scheduler=scheduler,
     label_smooth=True
 )
-
-engine.run(
-    save_dir='log/resnet50',
-    max_epoch=60,
-    eval_freq=10,
-    print_freq=10,
-    test_only=False
-)
+#
+# engine.run(
+#     save_dir='log/resnet50',
+#     max_epoch=60,
+#     eval_freq=10,
+#     print_freq=10,
+#     test_only=False
+# )
