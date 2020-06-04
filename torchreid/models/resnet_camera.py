@@ -153,7 +153,7 @@ class Bottleneck(nn.Module):
         return out
 
 
-class ResNet(nn.Module):
+class ResNet_CAMERA(nn.Module):
     """Residual network.
 
     Reference:
@@ -187,7 +187,7 @@ class ResNet(nn.Module):
             dropout_p=None,
             **kwargs
     ):
-        super(ResNet, self).__init__()
+        super(ResNet_CAMERA, self).__init__()
         if norm_layer is None:
             norm_layer = nn.BatchNorm2d
         self._norm_layer = norm_layer
@@ -390,7 +390,7 @@ def init_pretrained_weights(model, model_url):
 
 
 def resnet50_camera(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
+    model = ResNet_CAMERA(
         num_classes=num_classes,
         loss=loss,
         block=Bottleneck,
@@ -411,7 +411,7 @@ ResNet + FC
 
 
 def resnet50_fc512_camera(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = ResNet(
+    model = ResNet_CAMERA(
         num_classes=num_classes,
         loss=loss,
         block=Bottleneck,
