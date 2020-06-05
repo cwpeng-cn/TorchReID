@@ -365,7 +365,7 @@ class ResNet_CAMERA(nn.Module):
             return v
 
         y = self.classifier(v)
-        grl_v = self.GRL.apply(v)
+        grl_v = self.GRL.apply(v, 0.5)
         y_camera = self.camera_classifier(grl_v)
 
         if self.loss == 'softmax':
