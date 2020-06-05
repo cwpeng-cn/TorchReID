@@ -54,13 +54,13 @@ class ImageSoftmaxEngine(Engine):
     """
 
     def __init__(
-        self,
-        datamanager,
-        model,
-        optimizer,
-        scheduler=None,
-        use_gpu=True,
-        label_smooth=True
+            self,
+            datamanager,
+            model,
+            optimizer,
+            scheduler=None,
+            use_gpu=True,
+            label_smooth=True
     ):
         super(ImageSoftmaxEngine, self).__init__(datamanager, use_gpu)
 
@@ -84,6 +84,53 @@ class ImageSoftmaxEngine(Engine):
 
         outputs = self.model(imgs)
         loss = self.compute_loss(self.criterion, outputs, pids)
+
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+
+        loss_summary = {
+            'loss': loss.item(),
+            'acc': metrics.accuracy(outputs, pids)[0].item()
+        }
+
+        return loss_summary
+
+
+class ImageCameraSoftmaxEngine(Engine):
+    def __init__(
+            self,
+            datamanager,
+            model,
+            optimizer,
+            scheduler=None,
+            use_gpu=True,
+            label_smooth=True
+    ):
+        super(ImageCameraSoftmaxEngine, self).__init__(datamanager, use_gpu)
+
+        self.model = model
+        self.optimizer = optimizer
+        self.scheduler = scheduler
+        self.register_model('model', model, optimizer, scheduler)
+
+        self.criterion = CrossEntropyLoss(
+            num_classes=self.datamanager.num_train_pids,
+            use_gpu=self.use_gpu,
+            label_smooth=label_smooth
+        )
+
+    def forward_backward(self, data):
+        imgs, pids, cameras = self.parse_data_for_train_camera(data)
+
+        if self.use_gpu:
+            imgs = imgs.cuda()
+            pids = pids.cuda()
+            cameras = cameras.cuda()
+
+        outputs, camera_out = self.model(imgs)
+        loss = self.compute_loss(self.criterion, outputs, pids) \
+               + self.compute_loss(self.criterion, camera_out, cameras)
 
         self.optimizer.zero_grad()
         loss.backward()
