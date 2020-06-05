@@ -5,6 +5,7 @@ from __future__ import division, absolute_import
 import torch.utils.model_zoo as model_zoo
 from torch import nn
 from torch.autograd import Function
+import torch
 
 __all__ = [
     'resnet50_camera', 'resnet50_fc512_camera'
@@ -365,7 +366,7 @@ class ResNet_CAMERA(nn.Module):
             return v
 
         y = self.classifier(v)
-        grl_v = self.GRL.apply(v, 0.5)
+        grl_v = self.GRL.apply(v, torch.tensor(0.5))
         y_camera = self.camera_classifier(grl_v)
 
         if self.loss == 'softmax':

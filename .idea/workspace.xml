@@ -39,11 +39,9 @@
       <file leaf-file-name="resnet_camera.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/torchreid/models/resnet_camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="368" column="48" lean-forward="true" selection-start-line="368" selection-start-column="48" selection-end-line="368" selection-end-column="48" />
-              <folding>
-                <element signature="e#55#103#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-9825">
+              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -305,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591371917813</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Default Changelist">
+      <created>1591372062054</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591372062054</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -414,9 +419,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10400">
           <caret line="418" column="22" lean-forward="true" selection-start-line="418" selection-start-column="22" selection-end-line="418" selection-end-column="22" />
-          <folding>
-            <element signature="e#55#103#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -599,11 +602,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/torchreid/models/resnet_camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="368" column="48" lean-forward="true" selection-start-line="368" selection-start-column="48" selection-end-line="368" selection-end-column="48" />
-          <folding>
-            <element signature="e#55#103#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-9825">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
