@@ -21,6 +21,7 @@ from .resnet_ibn_a import *
 from .resnet_ibn_b import *
 from .shufflenetv2 import *
 from .inceptionresnetv2 import *
+from .resnet_camera import *
 
 __model_factory = {
     # image classification models
@@ -71,7 +72,9 @@ __model_factory = {
     'osnet_x0_5': osnet_x0_5,
     'osnet_x0_25': osnet_x0_25,
     'osnet_ibn_x1_0': osnet_ibn_x1_0,
-    'osnet_ain_x1_0': osnet_ain_x1_0
+    'osnet_ain_x1_0': osnet_ain_x1_0,
+    'resnet50_camera': resnet50_camera,
+    'resnet50_fc512_camera': resnet50_fc512_camera
 }
 
 
@@ -86,7 +89,7 @@ def show_avai_models():
 
 
 def build_model(
-    name, num_classes, loss='softmax', pretrained=True, use_gpu=True
+        name, num_classes, loss='softmax', pretrained=True, use_gpu=True, **kw
 ):
     """A function wrapper for building a model.
 
@@ -111,9 +114,18 @@ def build_model(
         raise KeyError(
             'Unknown model: {}. Must be one of {}'.format(name, avai_models)
         )
-    return __model_factory[name](
-        num_classes=num_classes,
-        loss=loss,
-        pretrained=pretrained,
-        use_gpu=use_gpu
-    )
+    if kw is None:
+        return __model_factory[name](
+            num_classes=num_classes,
+            loss=loss,
+            pretrained=pretrained,
+            use_gpu=use_gpu
+        )
+    else:
+        return __model_factory[name](
+            num_classes=num_classes,
+            num_camera=kw['num_camera'],
+            loss=loss,
+            pretrained=pretrained,
+            use_gpu=use_gpu
+        )

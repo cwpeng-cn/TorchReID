@@ -4,6 +4,7 @@ Code source: https://github.com/pytorch/vision
 from __future__ import division, absolute_import
 import torch.utils.model_zoo as model_zoo
 from torch import nn
+from torch.autograd import Function
 
 __all__ = [
     'resnet50_camera', 'resnet50_fc512_camera'
@@ -174,6 +175,7 @@ class ResNet_CAMERA(nn.Module):
     def __init__(
             self,
             num_classes,
+            num_camera,
             loss,
             block,
             layers,
@@ -240,6 +242,8 @@ class ResNet_CAMERA(nn.Module):
             fc_dims, 512 * block.expansion, dropout_p
         )
         self.classifier = nn.Linear(self.feature_dim, num_classes)
+        self.GRL = ReverseLayerF()
+        self.camera_classifier = nn.Linear(self.feature_dim, num_camera)
 
         self._init_params()
 
@@ -361,9 +365,11 @@ class ResNet_CAMERA(nn.Module):
             return v
 
         y = self.classifier(v)
+        grl_v = self.GRL(v, 0.5)
+        y_camera = self.camera_classifier(grl_v)
 
         if self.loss == 'softmax':
-            return y
+            return y, y_camera
         elif self.loss == 'triplet':
             return y, v
         else:
@@ -389,9 +395,10 @@ def init_pretrained_weights(model, model_url):
 """ResNet"""
 
 
-def resnet50_camera(num_classes, loss='softmax', pretrained=True, **kwargs):
+def resnet50_camera(num_classes, num_camera, loss='softmax', pretrained=True, **kwargs):
     model = ResNet_CAMERA(
         num_classes=num_classes,
+        num_camera=num_camera,
         loss=loss,
         block=Bottleneck,
         layers=[3, 4, 6, 3],
@@ -410,9 +417,10 @@ ResNet + FC
 """
 
 
-def resnet50_fc512_camera(num_classes, loss='softmax', pretrained=True, **kwargs):
+def resnet50_fc512_camera(num_classes, num_camera, loss='softmax', pretrained=True, **kwargs):
     model = ResNet_CAMERA(
         num_classes=num_classes,
+        num_camera=num_camera,
         loss=loss,
         block=Bottleneck,
         layers=[3, 4, 6, 3],
@@ -424,3 +432,15 @@ def resnet50_fc512_camera(num_classes, loss='softmax', pretrained=True, **kwargs
     if pretrained:
         init_pretrained_weights(model, model_urls['resnet50'])
     return model
+
+
+class ReverseLayerF(Function):
+    @staticmethod
+    def forward(ctx, x, alpha):
+        ctx.alpha = alpha
+        return x.view_as(x)
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        output = grad_output.neg() * ctx.alpha
+        return output, None

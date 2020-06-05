@@ -14,18 +14,16 @@ datamanager = torchreid.data.ImageDataManager(
 
 data_loader = datamanager.train_loader
 
-
-
 model = torchreid.models.build_model(
-    name='resnet50',
+    name='resnet50_camera',
     num_classes=datamanager.num_train_pids,
     loss='softmax',
-    pretrained=True
+    pretrained=True,
+    use_gpu=True,
+    num_camera=6,
 )
 
-
-#
-# print(model)
+print(model)
 #
 # model = model.cuda()
 #
@@ -41,13 +39,13 @@ model = torchreid.models.build_model(
 #     stepsize=20
 # )
 #
-engine = torchreid.engine.ImageSoftmaxEngine(
-    datamanager,
-    model,
-    optimizer=optimizer,
-    scheduler=scheduler,
-    label_smooth=True
-)
+# engine = torchreid.engine.ImageSoftmaxEngine(
+#     datamanager,
+#     model,
+#     optimizer=optimizer,
+#     scheduler=scheduler,
+#     label_smooth=True
+# )
 #
 # engine.run(
 #     save_dir='log/resnet50',
