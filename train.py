@@ -23,6 +23,7 @@ model = torchreid.models.build_model(
     num_camera=6,
 )
 
+
 print(model)
 #
 # model = model.cuda()
