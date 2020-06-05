@@ -242,7 +242,7 @@ class ResNet_CAMERA(nn.Module):
             fc_dims, 512 * block.expansion, dropout_p
         )
         self.classifier = nn.Linear(self.feature_dim, num_classes)
-        self.GRL = ReverseLayerF()
+        self.GRL = ReverseLayerF
         self.camera_classifier = nn.Linear(self.feature_dim, num_camera)
 
         self._init_params()
@@ -365,7 +365,7 @@ class ResNet_CAMERA(nn.Module):
             return v
 
         y = self.classifier(v)
-        grl_v = self.GRL(v, 0.5)
+        grl_v = self.GRL.apply(v)
         y_camera = self.camera_classifier(grl_v)
 
         if self.loss == 'softmax':
@@ -437,10 +437,11 @@ def resnet50_fc512_camera(num_classes, num_camera, loss='softmax', pretrained=Tr
 class ReverseLayerF(Function):
     @staticmethod
     def forward(ctx, x, alpha):
-        ctx.alpha = alpha
+        ctx.save_for_backward(alpha)
         return x.view_as(x)
 
     @staticmethod
     def backward(ctx, grad_output):
-        output = grad_output.neg() * ctx.alpha
+        alpha, = ctx.saved_tensors
+        output = grad_output.neg() * alpha
         return output, None
