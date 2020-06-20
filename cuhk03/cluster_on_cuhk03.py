@@ -1,6 +1,6 @@
 import os
 import torchreid
-from . import model
+from cuhk03 import model
 
 
 datamanager = torchreid.data.ImageDataManager(
