@@ -4,6 +4,32 @@ from cuhk03 import model
 from cuhk03.data import *
 from reid.utils import feature_operate as FO
 import scipy.io
+import numpy as np
+
+
+class union_find:
+    def __init__(self, length):
+        self.length = length
+        self.ids = np.arange(length)
+
+    def union(self, i, j):
+        id_i = self.ids[i]
+        id_j = self.ids[j]
+        for i in range(self.length):
+            if self.ids[i] == id_i:
+                self.ids[i] = id_j
+
+    def get_set(self):
+        keys = []
+        result = {}
+        for i in range(self.length):
+            value = self.ids[i]
+            if value in keys:
+                result[value].append(i)
+            else:
+                keys.append(value)
+                result[value] = [i]
+        return result
 
 
 def get_features():
@@ -52,6 +78,30 @@ def get_features():
     return train_feature
 
 
+def get_similarity(tf):
+    """
+    :param tf: 图片的特征
+    :return:
+    """
+    feature = torch.tensor(tf).cuda()
+
+    score = torch.mm(feature, feature.t()).detach().cpu().numpy()
+    indexs = np.argsort(-score, axis=1)
+    return indexs
+
+
+def connect_with_mutual(indexs):
+    u = union_find(indexs.shape[0])
+    for i in range(indexs.shape[0]):
+        for k in indexs[i][:13]:
+            if i in indexs[k][:13]:
+                u.union(i, k)
+        if i % 100 == 0:
+            print(i)
+    return u.get_set()
+
+
 train_feature = get_features()
-print(train_feature)
-print(len(train_feature))
+indexs = get_similarity(train_feature)
+connected = connect_with_mutual(indexs)
+print(len(connected.keys()))
