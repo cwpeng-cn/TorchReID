@@ -1,4 +1,5 @@
 import zipfile
+import os
 
 
 def download_and_prepare():
@@ -16,5 +17,5 @@ def download_and_prepare():
         fw.write(f.read())
 
 
-if __name__ == '__main__':
+if not os.path.exists('./resnet_ibn_b.py'):
     download_and_prepare()

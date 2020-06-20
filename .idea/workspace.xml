@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4811c286-9247-48bc-9dce-85bb24ff9a51" name="Default Changelist" comment="Default Changelist">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" afterPath="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/init_env.py" afterPath="$PROJECT_DIR$/cuhk03/init_env.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/model.py" afterPath="$PROJECT_DIR$/cuhk03/model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +19,7 @@
       <file leaf-file-name="cuhk03.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/torchreid/data/datasets/image/cuhk03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-749">
+            <state relative-caret-position="3451">
               <caret line="246" column="30" lean-forward="false" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="30" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
@@ -37,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cluster_on_cuhk03.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cluster_on_cuhk03.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="550">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -58,24 +61,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cuhk03/model.py">
+      <file leaf-file-name="init_env.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cuhk03/init_env.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="20" selection-end-column="26" />
+            <state relative-caret-position="475">
+              <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init_env.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cuhk03/init_env.py">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cuhk03/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-4524">
+              <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,11 +143,11 @@
         <option value="$PROJECT_DIR$/torchreid/data/datasets/image/cuhk03_new.py" />
         <option value="$PROJECT_DIR$/torchreid/engine/image/softmax.py" />
         <option value="$PROJECT_DIR$/cuhk03/train.py" />
-        <option value="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
         <option value="$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb" />
         <option value="$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/clustering_market_new.ipynb" />
         <option value="$PROJECT_DIR$/cuhk03/model.py" />
         <option value="$PROJECT_DIR$/cuhk03/init_env.py" />
+        <option value="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
       </list>
     </option>
   </component>
@@ -371,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592644327996</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Default Changelist">
+      <created>1592644379237</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1592644379237</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -772,16 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/torchreid/data/datasets/image/cuhk03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-749">
-          <caret line="246" column="30" lean-forward="false" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -799,16 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/clustering_market_new.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -816,21 +808,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/torchreid/data/datasets/image/cuhk03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3451">
+          <caret line="246" column="30" lean-forward="false" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cuhk03/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="-4524">
+          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cuhk03/init_env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="475">
+          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

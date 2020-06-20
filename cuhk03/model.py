@@ -1,24 +1,12 @@
+from . import init_env
 from torch import nn
 from torch.nn import functional as F
 from torch.nn import init
 import torchvision
 import torch
 import zipfile
-
-
-def download_and_prepare():
-    reid_path = "/content/drive/My Drive/Colab/datasets/reid.zip"
-    file_zip = zipfile.ZipFile(reid_path, 'r')
-    for file in file_zip.namelist():
-        file_zip.extract(file, r'.')
-
-    with open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/resnet_ibn_b.py", "rb") as f, open(
-            './resnet_ibn_b.py',
-            'wb') as fw:
-        fw.write(f.read())
-    with open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/net_149.pth", "rb") as f, open('./net_149.pth',
-                                                                                                      'wb') as fw:
-        fw.write(f.read())
+from resnet_ibn_b import *
+from reid.utils.model_save_restore import *
 
 
 class STN(nn.Module):
@@ -226,9 +214,7 @@ class ResNet(nn.Module):
         return x
 
 
-# def get_model():
-#     net = ResNet(num_classes=4101, num_features=1024)
-#     net = restore_network("./storage/", 149, net).cuda()
-#     return net
-if __name__ == '__main__':
-    download_and_prepare()
+def get_model():
+    net = ResNet(num_classes=4101, num_features=1024)
+    net = restore_network("./storage/", 149, net).cuda()
+    return net

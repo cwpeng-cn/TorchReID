@@ -1,5 +1,7 @@
 import os
 import torchreid
+from . import model
+
 
 datamanager = torchreid.data.ImageDataManager(
     root='./',
@@ -16,3 +18,6 @@ data_loader = datamanager.train_loader
 dataset = data_loader.dataset.train + data_loader.dataset.query + data_loader.dataset.gallery
 
 print(len(dataset))
+
+
+print(model.get_model())
