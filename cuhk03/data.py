@@ -22,6 +22,7 @@ class Dataset(data.Dataset):
         ])
         self.original_id = []
         self.cameras = []
+        self.paths = []
         self.ret = []
         self.preprocess()
 
@@ -31,6 +32,7 @@ class Dataset(data.Dataset):
             fpath, pid, cam = info[0], info[1], info[2]
             self.original_id.append(pid)
             self.cameras.append(cam)
+            self.paths.append(fpath)
             if relabel:
                 if pid not in all_pids:
                     all_pids[pid] = len(all_pids)
