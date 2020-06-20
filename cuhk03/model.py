@@ -216,5 +216,5 @@ class ResNet(nn.Module):
 
 def get_model():
     net = ResNet(num_classes=4101, num_features=1024)
-    net = restore_network("./storage/", 149, net).cuda()
+    net = restore_network("./", 149, net).cuda()
     return net
