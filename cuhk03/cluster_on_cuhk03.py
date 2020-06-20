@@ -118,7 +118,7 @@ for key in reliable_keys:
     print(key, ":", np.array(train_id)[connected[key]])
 
 # csv 写入
-csv_name = 'result_stn_cuhk03_13_3_32_22.csv'
+csv_name = 'result_stn_cuhk03_13_3_32.csv'
 out = open(csv_name, 'a', newline='')
 # 设定写入模式
 csv_write = csv.writer(out, dialect='excel')
