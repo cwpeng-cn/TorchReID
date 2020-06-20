@@ -12,7 +12,6 @@ datamanager = torchreid.data.ImageDataManager(
     transforms=['random_flip', 'random_crop']
 )
 
-
 data_loader = datamanager.train_loader
 
 model = torchreid.models.build_model(
@@ -40,7 +39,7 @@ scheduler = torchreid.optim.build_lr_scheduler(
     stepsize=20
 )
 
-engine = torchreid.engine.ImageCameraSoftmaxEngine(
+engine = torchreid.engine.ImageSoftmaxEngine(
     datamanager,
     model,
     optimizer=optimizer,
