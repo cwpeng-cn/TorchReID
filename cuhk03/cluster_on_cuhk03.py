@@ -125,3 +125,7 @@ csv_write = csv.writer(out, dialect='excel')
 for i, key in enumerate(reliable_keys):
     csv_write.writerow(np.array(train_path)[connected[key]])
 print("write over")
+
+with open(csv_name, "rb") as f, open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/excel/" + csv_name,
+                                     'wb') as fw:
+    fw.write(f.read())
