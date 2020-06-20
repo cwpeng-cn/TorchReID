@@ -1,7 +1,8 @@
 import os
 import torchreid
 from cuhk03 import model
-
+from cuhk03.data import *
+from reid.utils import feature_operate as FO
 
 datamanager = torchreid.data.ImageDataManager(
     root='./',
@@ -14,10 +15,10 @@ datamanager = torchreid.data.ImageDataManager(
     transforms=['random_flip', 'random_crop']
 )
 
-data_loader = datamanager.train_loader
-dataset = data_loader.dataset.train + data_loader.dataset.query + data_loader.dataset.gallery
+info = datamanager.train_loader
+data_info = info.dataset.train + info.dataset.query + info.dataset.gallery
 
-print(len(dataset))
+model = model.get_model()
+data_loader = get_loader(data_info)
 
-
-print(model.get_model())
+print(len(data_loader.dataset))
