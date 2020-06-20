@@ -12,15 +12,13 @@ def download_and_prepare():
     for file in file_zip.namelist():
         file_zip.extract(file, r'.')
 
-    with open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/resnet_ibn_b.py", "rb") as f, open('./resnet_ibn_b.py',
-                                                                                                  'wb') as fw:
+    with open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/resnet_ibn_b.py", "rb") as f, open(
+            './resnet_ibn_b.py',
+            'wb') as fw:
         fw.write(f.read())
     with open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/net_149.pth", "rb") as f, open('./net_149.pth',
-                                                                                              'wb') as fw:
+                                                                                                      'wb') as fw:
         fw.write(f.read())
-
-    from resnet_ibn_b import *
-    from reid.utils.model_save_restore import *
 
 
 class STN(nn.Module):
