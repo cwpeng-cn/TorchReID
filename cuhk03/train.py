@@ -16,7 +16,7 @@ datamanager = torchreid.data.ImageDataManager(
 data_loader = datamanager.train_loader
 
 model = torchreid.models.build_model(
-    name='resnet50_camera',
+    name='resnet50_fc512',
     num_classes=datamanager.num_train_pids,
     loss='softmax',
     pretrained=True,
@@ -49,7 +49,7 @@ engine = torchreid.engine.ImageCameraSoftmaxEngine(
 )
 
 engine.run(
-    save_dir='log/resnet50',
+    save_dir='log/cuhk03',
     max_epoch=60,
     eval_freq=10,
     print_freq=10,
