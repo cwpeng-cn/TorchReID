@@ -7,7 +7,6 @@ import scipy.io
 
 mat_name = os.path.join("./", 'feature_result.mat')
 
-
 datamanager = torchreid.data.ImageDataManager(
     root='./',
     sources='cuhk03',
@@ -30,5 +29,6 @@ train_id, train_camera = data_loader.dataset.original_id, data_loader.dataset.ca
 
 result = {'train_feature': train_feature.numpy()}
 scipy.io.savemat(mat_name, result)
-with open(mat_name,"rb") as f,open("../pcw/My Drive/Colab/ReID works/CVPR fintuning/mat/market_feature.mat",'wb') as fw:
-    fw.write(f.read())
+
+# with open(mat_name, "rb") as f, open("market_feature.mat", 'wb') as fw:
+#     fw.write(f.read())
