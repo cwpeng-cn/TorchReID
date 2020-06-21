@@ -106,7 +106,7 @@ def connect_with_mutual(indexs, num=13):
     return u.get_set()
 
 
-num = 8
+num = 9
 train_feature, train_id, train_camera, train_path = get_features()
 print(train_feature.shape)
 indexs = get_similarity(train_feature)
