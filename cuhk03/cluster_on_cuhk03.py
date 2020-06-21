@@ -106,9 +106,10 @@ def connect_with_mutual(indexs, num=13):
     return u.get_set()
 
 
+num = 20
 train_feature, train_id, train_camera, train_path = get_features()
 indexs = get_similarity(train_feature)
-connected = connect_with_mutual(indexs, 13)
+connected = connect_with_mutual(indexs, num)
 
 reliable_keys = []
 for key in connected.keys():
@@ -119,7 +120,7 @@ for key in reliable_keys:
     print(key, ":", np.array(train_id)[connected[key]])
 
 # csv 写入
-csv_name = 'result_stn_cuhk03_13_3_32.csv'
+csv_name = 'result_stn_cuhk03_{}_3_32.csv'.format(num)
 out = open(csv_name, 'a', newline='')
 # 设定写入模式
 csv_write = csv.writer(out, dialect='excel')
