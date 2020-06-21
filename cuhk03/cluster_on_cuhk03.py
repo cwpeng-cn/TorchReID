@@ -38,7 +38,7 @@ class union_find:
 
 def get_features():
     mat_name = os.path.join("./", 'feature_result.mat')
-    online_mat_name = "/content/drive/My Drive/Colab/ReID works/CVPR fintuning/mat/market_feature.mat"
+    online_mat_name = "/content/drive/My Drive/Colab/ReID works/CVPR fintuning/mat/cuhk03_feature.mat"
 
     datamanager = torchreid.data.ImageDataManager(
         root='./',
