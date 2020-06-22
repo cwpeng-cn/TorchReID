@@ -11,6 +11,7 @@ import re
 from torchvision import transforms
 from torch.utils.data import DataLoader
 import csv
+import torchreid
 
 
 class Dataset(data.Dataset):
