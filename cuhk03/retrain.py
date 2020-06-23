@@ -69,7 +69,8 @@ for epoch in range(40):
         if step % 10 == 0:
             print(step, loss_value.item())
         step += 1
-    if (epoch + 1) > 12 and (epoch + 1) % 2 == 0:
+    # if (epoch + 1) > 12 and (epoch + 1) % 2 == 0:
+    if  (epoch + 1) % 2 == 0:
         save_network(save_path, net, epoch)
         print("第{}轮效果评估开始>>>".format(epoch + 1))
         query_feature = FO.extract_cnn_feature(net, loader=query_loader, vis=False)
