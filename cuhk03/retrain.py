@@ -59,6 +59,16 @@ best_rank1 = -1
 best_rank1_epoch = 0
 print("开始训练>>>")
 for epoch in range(40):
+    if epoch==0:
+        print("开始测试直接迁移的结果")
+        query_feature = FO.extract_cnn_feature(net, loader=query_loader, vis=False)
+        gallery_feature = FO.extract_cnn_feature(net, loader=gallery_loader, vis=False)
+        query_id, query_camera = query_loader.dataset.original_id, query_loader.dataset.cameras
+        gallery_id, gallery_camera = gallery_loader.dataset.original_id, gallery_loader.dataset.cameras
+        map, cmc = market_evaluate.evaluate(query_feature, np.array(query_id), np.array(query_camera), gallery_feature,
+                                            np.array(gallery_id), np.array(gallery_camera), vis=False)
+        print("直接迁移的结果: map:{},rank-1:{},rank-5:{},rank-10:{}".format(epoch + 1, map, cmc[0], cmc[4], cmc[9]))
+
     scheduler.step()
     for images, ids, cams in train_loader:
         feat, predict, feat_stn, predict_stn = net(images.cuda())
@@ -70,7 +80,7 @@ for epoch in range(40):
             print(step, loss_value.item())
         step += 1
     # if (epoch + 1) > 12 and (epoch + 1) % 2 == 0:
-    if  (epoch + 1) % 2 == 0:
+    if (epoch + 1) % 2 == 0:
         save_network(save_path, net, epoch)
         print("第{}轮效果评估开始>>>".format(epoch + 1))
         query_feature = FO.extract_cnn_feature(net, loader=query_loader, vis=False)

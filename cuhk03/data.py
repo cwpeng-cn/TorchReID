@@ -102,7 +102,7 @@ def get_query_gallery_info():
         root='./',
         sources='cuhk03',
         targets='cuhk03',
-        height=256,
+        height=384,
         width=128,
         batch_size_train=32,
         batch_size_test=100,
