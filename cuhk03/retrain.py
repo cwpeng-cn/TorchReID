@@ -39,6 +39,7 @@ gallery_loader = get_loader(gallery_info)
 net = ResNet(num_classes=4101, num_features=1024)
 net = restore_network("./", 149, net)
 net = MNet(net, num_classes=num_classes, num_features=1024).cuda()
+print("权重加载成功")
 
 triplet = TripletLoss(0.3)
 
@@ -67,7 +68,7 @@ for epoch in range(40):
         gallery_id, gallery_camera = gallery_loader.dataset.original_id, gallery_loader.dataset.cameras
         map, cmc = market_evaluate.evaluate(query_feature, np.array(query_id), np.array(query_camera), gallery_feature,
                                             np.array(gallery_id), np.array(gallery_camera), vis=False)
-        print("直接迁移的结果: map:{},rank-1:{},rank-5:{},rank-10:{}".format(epoch + 1, map, cmc[0], cmc[4], cmc[9]))
+        print("直接迁移的结果: map:{},rank-1:{},rank-5:{},rank-10:{}".format(map, cmc[0], cmc[4], cmc[9]))
 
     scheduler.step()
     for images, ids, cams in train_loader:
