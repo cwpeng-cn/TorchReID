@@ -10,6 +10,7 @@ from cuhk03.data import *
 import numpy as np
 from cuhk03.model import ResNet
 
+
 excel_path = '/content/drive/My Drive/Colab/ReID works/CVPR fintuning/excel/cuhk03/result_stn_cuhk03_9_3_32_172.csv'
 weight_path = "/content/drive/My Drive/Colab/ReID works/CVPR fintuning/net_149.pth"
 
