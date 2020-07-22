@@ -16,7 +16,7 @@ weight_path = "/content/drive/My Drive/Colab/ReID works/CVPR fintuning/net_149.p
 with open(weight_path, "rb") as f, open('./net_149.pth', 'wb') as fw:
     fw.write(f.read())
 
-num_classes = 294
+num_classes = 172
 
 save_path = './'
 train_transform = transforms.Compose([
