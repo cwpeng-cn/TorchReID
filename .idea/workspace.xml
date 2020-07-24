@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4811c286-9247-48bc-9dce-85bb24ff9a51" name="Default Changelist" comment="Default Changelist">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/retrain.py" afterPath="$PROJECT_DIR$/cuhk03/retrain.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" afterPath="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,10 +23,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="retrain.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="retrain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cuhk03/retrain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="68">
               <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -105,12 +105,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cluster_on_cuhk03.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cluster_on_cuhk03.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="-664">
+              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,8 +120,8 @@
       <file leaf-file-name="kmeans_on_cuhk03.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+            <state relative-caret-position="408">
+              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="28" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -159,6 +161,7 @@
       <find>restore_network</find>
       <find>train_transform</find>
       <find>cuhk03</find>
+      <find>cuhk</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,15 +181,15 @@
         <option value="$PROJECT_DIR$/torchreid/data/datasets/image/cuhk03_new.py" />
         <option value="$PROJECT_DIR$/torchreid/engine/image/softmax.py" />
         <option value="$PROJECT_DIR$/cuhk03/train.py" />
-        <option value="$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb" />
         <option value="$PROJECT_DIR$/cuhk03/init_env.py" />
         <option value="$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/clustering_market_new.ipynb" />
-        <option value="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
         <option value="$PROJECT_DIR$/cuhk03/model.py" />
         <option value="$PROJECT_DIR$/cuhk03/utils.py" />
         <option value="$PROJECT_DIR$/cuhk03/data.py" />
         <option value="$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py" />
         <option value="$PROJECT_DIR$/cuhk03/retrain.py" />
+        <option value="$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb" />
+        <option value="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
       </list>
     </option>
   </component>
@@ -669,7 +672,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595603596207</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Default Changelist">
+      <created>1595603609579</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1595603609579</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1028,13 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cuhk03/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2958">
@@ -1073,30 +1076,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
+    <entry file="file://$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuhk03/retrain.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="9" />
-          <folding />
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+        <state relative-caret-position="408">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="28" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuhk03/retrain.py">
+    <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="-664">
+          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

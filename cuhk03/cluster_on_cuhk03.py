@@ -48,7 +48,8 @@ def get_features():
         width=128,
         batch_size_train=32,
         batch_size_test=100,
-        transforms=['random_flip', 'random_crop']
+        transforms=['random_flip', 'random_crop'],
+        cuhk03_labeled = True
     )
 
     info = datamanager.train_loader
@@ -106,7 +107,7 @@ def connect_with_mutual(indexs, num=13):
     return u.get_set()
 
 
-num = 9
+num = 8
 train_feature, train_id, train_camera, train_path = get_features()
 print(train_feature.shape)
 indexs = get_similarity(train_feature)
