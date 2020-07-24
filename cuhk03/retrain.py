@@ -11,13 +11,13 @@ import numpy as np
 from cuhk03.model import ResNet
 
 
-excel_path = '/content/drive/My Drive/Colab/ReID works/CVPR fintuning/excel/cuhk03/result_stn_cuhk03_9_3_32_172.csv'
+excel_path = '/content/drive/My Drive/Colab/ReID works/CVPR fintuning/excel/cuhk03/result_stn_cuhk03_8_3_32_283.csv'
 weight_path = "/content/drive/My Drive/Colab/ReID works/CVPR fintuning/net_149.pth"
 
 with open(weight_path, "rb") as f, open('./net_149.pth', 'wb') as fw:
     fw.write(f.read())
 
-num_classes = 172
+num_classes = 283
 
 save_path = './'
 train_transform = transforms.Compose([

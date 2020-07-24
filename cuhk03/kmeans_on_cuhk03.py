@@ -76,6 +76,6 @@ for label in range(767):
 print("write over")
 out.close()
 
-with open(csv_name, "rb") as f, open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/excel/" + csv_name,
+with open(csv_name, "rb") as f, open("/content/drive/My Drive/Colab/ReID works/CVPR fintuning/excel/cuhk03/" + csv_name,
                                      'wb') as fw:
     fw.write(f.read())
