@@ -11,7 +11,6 @@ from os import path as osp
 import csv
 from sklearn.cluster import KMeans
 
-
 def get_features():
     mat_name = os.path.join("./", 'feature_result.mat')
     online_mat_name = "/content/drive/My Drive/Colab/ReID works/CVPR fintuning/mat/cuhk03_feature.mat"
