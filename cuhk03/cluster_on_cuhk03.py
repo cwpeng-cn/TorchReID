@@ -49,7 +49,7 @@ def get_features():
         batch_size_train=32,
         batch_size_test=100,
         transforms=['random_flip', 'random_crop'],
-        cuhk03_labeled = True
+        cuhk03_labeled=True
     )
 
     info = datamanager.train_loader
