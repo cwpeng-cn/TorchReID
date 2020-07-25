@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4811c286-9247-48bc-9dce-85bb24ff9a51" name="Default Changelist" comment="Default Changelist">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cuhk03/retrain_kmeans.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" afterPath="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cuhk03/retrain.py" afterPath="$PROJECT_DIR$/cuhk03/retrain.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,14 +27,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="retrain.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="retrain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cuhk03/retrain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+            <state relative-caret-position="339">
+              <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="17" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="retrain_kmeans.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cuhk03/retrain_kmeans.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,11 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cluster_on_cuhk03.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cluster_on_cuhk03.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="679">
+              <caret line="126" column="37" lean-forward="false" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kmeans_on_cuhk03.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="74" column="78" lean-forward="true" selection-start-line="74" selection-start-column="78" selection-end-line="74" selection-end-column="78" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -161,10 +184,11 @@
         <option value="$PROJECT_DIR$/cuhk03/model.py" />
         <option value="$PROJECT_DIR$/cuhk03/utils.py" />
         <option value="$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py" />
-        <option value="$PROJECT_DIR$/cuhk03/retrain.py" />
         <option value="$USER_HOME$/OneDrive - whu.edu.cn/own/CVPR 2020/重投期刊/APIN/code/retrain_market.ipynb" />
         <option value="$PROJECT_DIR$/cuhk03/data.py" />
         <option value="$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py" />
+        <option value="$PROJECT_DIR$/cuhk03/retrain_kmeans.py" />
+        <option value="$PROJECT_DIR$/cuhk03/retrain.py" />
       </list>
     </option>
   </component>
@@ -310,13 +334,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590997558714</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Default Changelist">
-      <created>1591372062054</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1591372062054</updated>
     </task>
     <task id="LOCAL-00009" summary="Default Changelist">
       <created>1591372174080</created>
@@ -654,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595662697339</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Default Changelist">
+      <created>1595663239249</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1595663239249</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -711,13 +735,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/torchreid/models/resnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="529" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/torchreid/models/senet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -979,16 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="78" lean-forward="true" selection-start-line="74" selection-start-column="78" selection-end-line="74" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/torchreid/data/datasets/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1042,16 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuhk03/retrain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cuhk03/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="968">
@@ -1084,10 +1081,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cuhk03/cluster_on_cuhk03.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="679">
+          <caret line="126" column="37" lean-forward="false" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuhk03/kmeans_on_cuhk03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="74" column="78" lean-forward="true" selection-start-line="74" selection-start-column="78" selection-end-line="74" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuhk03/retrain_kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuhk03/retrain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
