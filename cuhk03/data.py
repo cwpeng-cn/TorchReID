@@ -97,7 +97,6 @@ def get_loader(data_info):
     return DataLoader(dataset, batch_size=32, shuffle=False, num_workers=4)
 
 
-
 def get_query_gallery_info():
     datamanager = torchreid.data.ImageDataManager(
         root='./',
@@ -108,7 +107,7 @@ def get_query_gallery_info():
         batch_size_train=32,
         batch_size_test=100,
         transforms=['random_flip', 'random_crop'],
-        cuhk03_labeled = True
+        cuhk03_labeled=True
     )
 
     info = datamanager.train_loader
